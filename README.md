@@ -5,6 +5,10 @@
 This is my journey throughout learning React, Bootstrap, Sass, npm, gulp, javascript, and more.
 
 ### Personal Notes:
+11/18/19
+React has a component(?) `react-router` that allows for simple page transitions. It get complicated, however, because it modifies the client-side URL and update contents accordingly, but does not actually send requests to the server.
+This results in a 404 error when a user is trying to access a specific page by its URL.
+TODO: Look into HashRouter(?)
 
 11/17/19
 So far, I think the best way to deploy and publish the website on the Github User Page is to commit all the pre-built source code to a different branch, and then using the npm `gh-pages` plugin to publish it on the master branch.
