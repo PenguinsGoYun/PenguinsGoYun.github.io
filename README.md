@@ -6,6 +6,18 @@ This is my journey throughout learning React, Bootstrap, Sass, npm, gulp, javasc
 
 ### Personal Notes:
 
+11/17/19
+So far, I think the best way to deploy and publish the website on the Github User Page is to commit all the pre-built source code to a different branch, and then using the npm `gh-pages` plugin to publish it on the master branch.
+
+You can only publish the page on the master branch for your user page.
+You can publish various project pages on other repositories as long as the settings are configured correctly.
+
+React, Bootstrap, and icon packages are super useful and simplify the process of making the websites look aesthetically pleasing.
+
+CSS and SCSS is difficult. I often feel that I am not taking enough advantage of the unique features of SCSS when writing stylesheets.
+
+Creating good content and designing the website correctly seems equally, if not more, difficult than implementing the website and its functionalities.
+
 11/11/19
 
 `gulp` compiles scss files into regular css files since browsers do not have support for scss yet  
@@ -19,7 +31,7 @@ Fonts also go in the head of `index.html`
 Different component for every page  
 React Router will detect changes in the URL and update the page accordingly
 
-# React
+## React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -40,7 +52,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm run build` and `npm run deploy`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.

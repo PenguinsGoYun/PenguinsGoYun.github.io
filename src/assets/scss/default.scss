@@ -1,21 +1,36 @@
 @import "_config.scss";
+@import "router.scss";
 
-#App {
+.landing-page {
+    position: absolute;
+    top: 0px;
+    background-image: url("/images/skyline.jpg");
     height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    padding-top: 30vh;
+    z-index: -100;
 }
 
 header {
     position: relative;
     display: block;
+    
+    height: 70px;
     width: 100%;
+    
     background: $black;
     color: $white;
-    height: 90px;
+    
+    margin-bottom: 20px;
 
     .logo {
         position: absolute;
         letter-spacing: 5px;
-        top: 50%; left: 15px;
+        top: 50%; left: 25px;
         @include translateY(-50%);
 
         a {
@@ -23,76 +38,60 @@ header {
         }
     }
 
-    nav,
-    nav ul,
-    nav ul li {
-        margin: 0;
-        padding: 0;
-    }
-
-    nav {
+    .nav {
         position: absolute;
-        top: 50%; right: 15px;
+        top: 50%;
         @include translateY(-50%);
-
-        ul li {
-            list-style-type: none;
-            display: inline-block;
-            margin-right: 25px;
-
-            &.last {
-                margin: 0;
-            }
-
-            a {
-                font-size: 19px;
-                line-height: normal;
-                color: $white;
-            }
-        }
+    }
+    .justify-content-end {
+        right: 25px;
+    }
+    .nav-link {
+        font-size: 19px;
+        
+        background: linear-gradient(to bottom, $white 0%, $white 100%);
+        background-repeat: repeat-x;
+        background-position: 0 100%;
+        background-size: 0px 0px;
+    }
+    .nav-link:hover {
+        background-size: 4px 50px;
     }
 }
 
 footer {
     position: absolute;
     display: block;
+    
+    height: 70px;
     width: 100%;
+    
     background: $black;
     color: $white;
+
     bottom: 0;
-    height: 90px;
+    margin-top: 50px;
 
-    nav,
-    nav ul,
-    nav ul li {
-        margin: 0;
-        padding: 0;
-    }
+    text-align: center;
 
-    nav {
-        position: relative;
-
-        top: 50%; right: 0px;
+    .nav {
+        position: absolute;
+        top: 50%;
         @include translateY(-50%);
+    }
+    .justify-content-center {
+        left: 50%;
+        @include translate(-50%, -50%);
+    }
+    .nav-link {
+        font-size: 19px;
 
-        ul {
-            text-align: center;
-        }
-
-        ul li {
-            list-style-type: none;
-            display: inline-block;
-            margin-right: 25px;
-
-            &.last {
-                margin: 0;
-            }
-
-            a {
-                font-size: 19px;
-                line-height: normal;
-                color: $white;
-            }
-        }
+        background: linear-gradient(to bottom, $white 0%, $white 100%);
+        background-repeat: repeat-x;
+        background-position: 0 100%;
+        background-size: 0px 0px;
+    }
+    .nav-link:hover {
+        background-size: 4px 50px;
     }
 }

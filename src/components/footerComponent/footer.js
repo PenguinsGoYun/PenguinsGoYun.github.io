@@ -1,28 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <footer>
-        <nav>
-            <ul>
-                <li className="first">
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/journey">Journey</Link>
-                </li>
-                <li>
-                    <Link to="/projects">Projects</Link>
-                </li>
-                <li>
-                    <Link to="/interests">Interests</Link>
-                </li>
-                <li className="last">
-                    <Link to="/contact">Contact</Link>
-                </li>
-            </ul>
-        </nav>
+
+      {/*
+      <ul className="nav justify-content-center">
+        <li className="nav-item">
+          <Link to="/" className="nav-link">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/journey" className="nav-link">Journey</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/projects" className="nav-link">Projects</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/interests" className="nav-link">Interests</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/contact" className="nav-link">Contact</Link>
+        </li>
+      </ul>
+      */}
+      
+      <p>
+        <small>
+          Built using React and Bootstrap.
+          <br></br> &copy; 2019 Yeon Kim. All rights reserved.
+        </small>
+      </p>
+
     </footer>
   );
 }

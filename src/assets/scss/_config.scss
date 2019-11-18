@@ -1,10 +1,21 @@
 /* Variables */
+$ndgold: #d4b700;
+$ndblue: #00266b;
+$regisred: #d31145;
+$orderinred: #e74c3c;
+$cyberpatriotblue: #124887;
 $black: #010000;
 $white: #ffffff;
 $lightGrey: #e6e6e6;
+$grey: #737373;
 $darkGrey: #333;
-$lightBlue: #03dbfc;
+$orange: #f77e1b;
 $red: #ff1755;
+$timelineTheme: #fff;
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
 
 /* Fonts -
 
@@ -21,6 +32,16 @@ bold 700 Italic
     -moz-transform:     translateY($e);
     transform:          translateY($e);
 }
+@mixin translateX($e) {
+    -webkit-transform:  translateX($e);
+    -moz-transform:     translateX($e);
+    transform:          translateX($e);
+}
+@mixin translate($e, $f) {
+    -webkit-transform:  translate($e, $f);
+    -moz-transform:     translate($e, $f);
+    transform:          translate($e, $f);
+}
 
 @mixin transition($e) {
     -webkit-transition: $e;
@@ -28,28 +49,108 @@ bold 700 Italic
     transition:         $e;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    font-family: 'Raleway', sans-serif;
+    background: $lightGrey;
+    font-family: 'Raleway', monospace;
     font-size: 18px;
     color: $black;
     font-weight: 400;
     font-style: normal;
 }
 
-a {
+small {
+    font-size: 12px;
+}
+
+#{$a-tags} {
+    color: $white;
     text-decoration: none;
+
     @include transition(.4s ease-in-out);
-    cursor: pointer;
     
-    &:hover {
-        text-decoration: none;
-        color: $lightBlue;
-        @include transition(.4s ease-in-out);
-    }
+    cursor: pointer;
+}
+
+#{$a-tags-hover} {
+    color: $black;
+    
+    @include transition(.4s ease-in-out);
 }
 
 .container-fluid {
-    padding-top: 10px;
+    padding-top: 15px;
     line-height: 24px;
+    width: 90%;
+    margin-bottom: 100px;
 }
 
+/* Vertical Timeline Elements */
+.vertical-timeline {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.vertical-timeline::before {
+    background: $timelineTheme;   // Line Color
+}
+.vertical-timeline-element {
+    h5 {
+        color: $grey;
+    }
+    a, a:visited {
+        text-decoration: none;
+        position: relative;
+    }
+    a:after, a:visited::after {
+        content: '';
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        background: #000;
+        @include transition(.4s ease-in-out);
+    }
+    a:hover::after, a:visited:hover::after {
+        width: 100%;
+    }
+}
+.vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px $timelineTheme, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);
+}
+.vertical-timeline-element-title {
+    a:after, a:visited::after {
+        height: 2px;
+    }
+    .orderin-link, .orderin-link:visited {
+        color: $orderinred;
+    }
+    .orderin-link::after, .orderin-link:visited::after {
+        background: $orderinred;
+    }
+    .cyberpatriot-link, .cyberpatriot-link:visited {
+        color: $cyberpatriotblue;
+    }
+    .cyberpatriot-link::after, .cyberpatriot-link:visited::after {
+        background: $cyberpatriotblue;
+    }
+}
+.vertical-timeline-element-content {
+    background: $timelineTheme;
+
+    p {
+        .regis-link, .regis-link:visited {
+            color: $regisred;
+        }
+        .regis-link::after, .regis-link:visited::after {
+            background: $regisred;
+        }
+    }
+}
+.vertical-timeline-element-content-arrow {
+    border-right: 7px solid $timelineTheme;
+}
